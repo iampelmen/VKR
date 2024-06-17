@@ -1,0 +1,202 @@
+/* Основные стили */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(135deg, #1a1a1d 0%, #c3073f 100%);
+  color: white;
+}
+
+.header-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.nav-links ul {
+  list-style: none; /* Убираем маркеры списка */
+  display: flex; /* Стилизуем список для расположения элементов горизонтально */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  margin-left: 1rem; /* Добавляем отступ между кнопками */
+}
+
+.nav-link:first-child {
+  margin-left: 0; /* У первой кнопки отступ не нужен */
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header-title {
+    margin-bottom: 1rem; /* Добавляем отступ между заголовком и навигацией */
+  }
+
+  .nav-links ul {
+    flex-direction: column; /* На мобильных устройствах кнопки будут вертикально */
+    width: 100%;
+  }
+
+  .nav-link {
+    margin-left: 0; /* На мобильных убираем горизонтальные отступы между кнопками */
+    margin-bottom: 0.5rem; /* Добавляем небольшой отступ снизу между кнопками */
+  }
+
+  .nav-link:last-child {
+    margin-bottom: 0; /* У последней кнопки отступ снизу не нужен */
+  }
+}
+
+.custom-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #c3073f;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.custom-button:hover, .nav-link a:hover {
+  background-color: #ff5768;
+  transform: translateY(-2px);
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #c3073f;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Дополнительные стили */
+.admin-main {
+  margin: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #1a1a1d;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  margin-top: auto;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem;
+  }
+
+  header .header-title {
+    font-size: 1.2em;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center; /* Для выравнивания по центру */
+  }
+
+  .nav-link {
+    margin: 0.5rem 0;
+  }
+
+  .nav-link a, .custom-button {
+    padding: 0.5rem 1rem; /* Небольшие отступы для мобильных устройств */
+    margin-left: 0; /* Обнуляем margin-left, так как элементы теперь в колонке */
+    font-size: 1em; /* Меньший размер шрифта для маленьких экранов */
+    display: block; /* Блочное отображение для полной ширины */
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding включался в общую ширину */
+  }
+
+  .admin-main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+.message {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #4CAF50; /* зеленый фон */
+  margin-bottom: 15px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  /* Стили, которые уже есть, добавляется: */
+
+  /* Стилизация таблицы для мобильных устройств */
+  table {
+    display: block;
+    overflow-x: auto; /* Добавляем горизонтальный скролл для маленьких экранов */
+    white-space: nowrap; /* Убирает переносы строк внутри таблицы */
+  }
+
+  th, td {
+    padding: 0.5rem; /* Меньше отступы в ячейках таблицы */
+  }
+}
+
+/* Стили для сообщений (баннеров с информацией) */
+.message {
+  /* Существующие стили остаются без изменений */
+  /* Вы можете добавить адаптивные стили для мобильных, если требуется */
+}
+
+/* Для кнопок управления (Добавить, Редактировать, Удалить) */
+@media screen and (max-width: 768px) {
+  .custom-button {
+    /* Подстраиваем размер и отступы под мобильные экраны */
+    padding: 8px 12px; /* Чуть уменьшенный паддинг */
+    margin: 4px 0; /* Уменьшенные вертикальные отступы */
+    font-size: 0.9em; /* Чуть меньшее текста */
+  }
+}
+
+/* Подстройка отступов контента */
+@media screen and (max-width: 768px) {
+  .admin-main {
+    padding: 1rem;
+    margin: 1rem; /* Уменьшаем отступы для экономии пространства */
+  }
+}

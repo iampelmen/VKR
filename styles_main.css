@@ -1,0 +1,370 @@
+/* Основные переменные */
+:root {
+  --background-color: #f4f7f6;
+  --text-color: #333;
+  --header-background: #1a1a1d;
+  --accent-color: #c3073f;
+  --hover-dark-accent: #6f2232;
+  --light-color: white;
+  --section-padding: 1rem;
+  --transition-duration: 0.3s;
+}
+
+/* Сброс и общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-size-adjust: 100%; /* Обеспечивает корректное масштабирование текста на iOS */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Шапка сайта */
+header {
+  background: var(--header-background); 
+  color: var(--light-color);
+  padding: 0.8em 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 2em; /* Увеличенный размер для лучшей видимости */
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Стили для ссылок и кнопок */
+.logo, h1, h2, h3, p, a, button {
+  color: var(--text-color);
+}
+nav a, .login-button, .register-button {
+  text-decoration: none;
+  color: var(--light-color);
+  background-color: var(--accent-color);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color var(--transition-duration);
+  cursor: pointer;
+  font-weight: bold;
+}
+nav a:hover, .login-button:hover, .register-button:hover {
+  background-color: var(--hover-dark-accent);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Стили для основного содержания */
+main {
+  padding: var(--section-padding);
+  flex-grow: 1; /* Добавлено, что бы main занимал оставшееся пространство */
+}
+
+section {
+  margin-bottom: var(--section-padding);
+}
+/* Стили для секции "О сайте" */
+#about {
+  background: var(--light-color);
+  padding: 2em; /* Увеличили внутренние отступы */
+  border-radius: 10px; /* Скруглили углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавили тень для создания эффекта "выпуклости" */
+}
+
+#about h1 {
+  color: black; /* Установили акцентный цвет для заголовка */
+  font-size: 2.0rem; /* Увеличили размер шрифта для заголовка */
+  margin-bottom: 1rem; /* Добавили нижний отступ */
+  text-align: center; /* Центрировали заголовок */
+}
+
+#about p {
+  font-size: 1.2rem; /* Увеличили размер шрифта для текста */
+  line-height: 1.6; /* Увеличили межстрочный интервал для улучшения читаемости */
+  color: black; /* Указали цвет текста из переменной */
+  text-align: justify; /* Выравнивание текста по ширине для более аккуратного вида */
+  margin-bottom: 2rem; /* Добавили нижний отступ для абзаца */
+  text-align: center;
+}
+
+/* Стиль для призыва к действию в секции "О сайте" */
+#about a {
+  display: inline-block; /* Сделали ссылку блочным элементом */
+  background-color: var(--accent-color); /* Задали акцентный фон */
+  color: var(--light-color); /* Белый текст на кнопке */
+  padding: 0.8em 1.5em; /* Внутренние отступы */
+  border-radius: 5px; /* Скругление углов */
+  font-weight: bold; /* Жирный шрифт */
+  text-decoration: none; /* Убрали подчёркивание */
+  transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+#about a:hover {
+  background-color: var(--hover-dark-accent); /* Изменение фона при наведении */
+}
+#features {
+  background: var(--light-color); /* Белый или светлый фон */
+  padding: 2em; /* Увеличили внутренние отступы */
+  border-radius: 10px; /* Скруглили углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавили тень для создания эффекта "выпуклости" */
+  margin: 1em 0; /* Добавили верхний и нижний отступы */
+}
+
+#features h2 {
+  color: black; /* Акцентный цвет для заголовка */
+  font-size: 2rem; /* Увеличили размер шрифта для заголовка */
+  text-align: center; /* Центрировали заголовок */
+  margin-bottom: 1rem; /* Добавили нижний отступ */
+}
+
+.features-list {
+  list-style: none; /* Убрали стандартные маркеры списка */
+  padding: 0; /* Обнулили внутренние отступы */
+  display: flex; /* Использовали Flexbox для выравнивания элементов */
+  flex-direction: column; /* Элементы списка располагаются вертикально */
+  gap: 1rem; /* Добавили промежуток между элементами списка */
+}
+
+.features-list li {
+  background: var(--accent-color); /* Фоновый цвет элементов списка */
+  color: var(--light-color); /* Цвет текста элементов списка */
+  padding: 0.8em 1.2em; /* Внутренние отступы */
+  border-radius: 5px; /* Скруглили углы */
+  text-align: center; /* Центрировали текст */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавили тень к элементам списка */
+}
+#call-to-action {
+  text-align: center;
+  padding: 2em;
+  background: var(--light-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
+}
+
+#call-to-action h2 {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+#call-to-action p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.add-court-button {
+  font-size: 1.2rem;
+  color: var(--light-color);
+  background-color: var(--accent-color);
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.add-court-button:hover {
+  background-color: var(--hover-dark-accent);
+}
+
+/* Стили для элементов карточек и списка */
+.slider, .news, .articles, .reviews, .gallery, .contact, .featured-courts, .court {
+  background: var(--light-color);
+  padding: var(--section-padding);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--section-padding);
+  transition: box-shadow var(--transition-duration);
+}
+.courts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* Элементы выравниваются с левой стороны */
+  align-items: stretch; /* Элементы растягиваются на всю доступную высоту */
+}
+
+/* Стили для карточек площадок */
+.courts-container .court {
+  flex: 0 0 calc(33.333% - 1rem); /* Ширина для трех элементов в ряд */
+  display: flex; /* Применяем flex-box для внутренностей карточки */
+  flex-direction: column; /* Внутренние элементы размещаются вертикально */
+  margin-bottom: 1rem; /* Нижний отступ */
+}
+
+/* Стили для изображений */
+.courts-container .court img {
+  width: 100%; /* Заставляем изображение занимать всю доступную ширину карточки */
+  height: auto; /* Высота изображения будет автоматически подгоняться для сохранения пропорций */
+  object-fit: cover; /* Обрезка изображения, чтобы оно покрыло контейнер */
+  border-radius: 0.5rem; /* Скругляем углы изображений */
+}
+
+/* Стили для заголовков в карточках */
+.courts-container .court h3 {
+  font-size: 1.1em;
+  margin-top: 0.5em; /* Верхний отступ */
+  margin-bottom: 0.25em; /* Нижний отступ */
+}
+
+/* Стили для текста описания */
+.courts-container .court p {
+  font-size: 0.9em;
+  margin-bottom: 0.5em; /* Нижний отступ */
+}
+.featured-courts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* Убедитесь, что элементы выравниваются с левой стороны */
+  align-items: stretch; /* Элементы растягиваются на всю доступную высоту */
+}
+
+.featured-courts .court {
+  flex: 0 0 calc(33.333% - 1rem); /* Задаём ширину, чтобы вместить 3 элемента в ряд */
+  margin-bottom: 1rem; /* Убедитесь, что у элементов есть нижний отступ */
+}
+.featured-courts .court:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.featured-courts .court img {
+  width: 100%; /* Ширина изображения равна ширине карточки */
+  height: 200px; /* Фиксированная высота всех изображений */
+  object-fit: cover; /* Изображение будет обрезано, чтобы заполнить элемент */
+  border-radius: 0.5rem; /* Скругляем углы изображений */
+}
+/* Футер */
+footer {
+  background: var(--header-background);
+  color: white;
+  text-align: center;
+  padding: var(--section-padding);
+  font-size: 0.8rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo {
+    flex-basis: 100%; /* Лого на всю ширину */
+    order: -1; /* Лого будет сверху */
+    text-align: center; /* Центрирование логотипа */
+  }
+
+  nav {
+    margin-top: var(--section-padding);
+  }
+  nav a {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-buttons {
+    flex-basis: 100%;
+    justify-content: space-around;
+    padding: 0.5em 0; /* Добавленный padding для отступа */
+  }
+  .featured-courts .court {
+    flex-basis: 100%; /* Один элемент на всю ширину экрана для мобильных устройств */
+    margin: 0 0 1rem 0; /* Отступ снизу для вертикального отображения */
+  }
+  .login-button, .register-button {
+    width: 100%;
+    padding: var(--section-padding);
+  }
+  
+  /* Стили для секций */
+  section#features ul.features-list li {
+    font-size: var(--text-size-small);
+  }
+  #about {
+    padding: 1em; /* Уменьшили внутренние отступы для мобильных устройств */
+  }
+
+  #about h1 {
+    font-size: 2rem; /* Уменьшили размер шрифта заголовка для мобильных устройств */
+  }
+
+  #about p {
+    font-size: 1rem; /* Уменьшили размер шрифта текста для мобильных устройств */
+    text-align: left; /* Убрали выравнивание текста по ширине для мобильных устройств */
+  }
+
+  #about a {
+    padding: 0.6em 1em; /* Скорректировали внутренние отступы для мобильных устройств */
+    font-size: 0.9rem; /* Меньший размер текста в кнопке на мобильных устройствах */
+  }
+}
+
+
+
+
+/* Дополнительные стили для отображения */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact input[type="text"], .contact input[type="email"], .contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.contact input[type="submit"] {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.contact input[type="submit"]:hover {
+  background-color: var(--hover-dark-accent);
+}
+
+/* Стили для анимации взаимодействия */
+button, a, .court {
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+button:hover, a:hover, .court:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для изображений внутри блоков */
+.welcome-image, .featured-courts .court img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-image:hover, .featured-courts .court img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

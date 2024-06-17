@@ -1,0 +1,448 @@
+:root {
+  --primary-color: #c3073f;
+  --background-color-header-footer: #1a1a1d;
+  --text-color: white;
+  --background-color: #f9f9f9;
+  --border-color: #e1e1e1;
+  --border-hover-color: #c3073f;
+  --modal-background-color: rgba(0, 0, 0, 0.4);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #1a1a1d; /* Мягкий тёмный фон для контраста с текстом */
+  color: white;
+  padding: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+header h1 {
+  font-size: 1.6em;
+  margin: 0;
+  padding-left: 0.5em;
+  flex-grow: 1;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  transition: background-color 0.2s ease-in-out; /* Плавный эффект для наведения */
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #c3073f; /* Яркий акцент при наведении */
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+footer {
+  background: #333; /* Мягкий тёмный цвет для фона */
+  color: white;
+  text-align: center;
+  padding: 1em;
+  height: 40px;
+  z-index: 999;
+}
+
+/* Стили для основного контейнера */
+/* Стили для страницы профиля пользователя */
+/* Стили для страницы профиля пользователя */
+.account-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px; /* Увеличиваем ширину */
+  margin: 2em auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1.5em; /* Немного увеличиваем внутренние поля */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.account-info {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.account-info h2 {
+  color: #1a1a1d;
+  margin-bottom: 0.5em;
+}
+
+.account-details {
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+}
+
+.account-details span {
+  display: block;
+  margin: 0.75em 0; /* Увеличиваем промежуток между элементами информации */
+  color: #333;
+}
+
+.account-details strong {
+  color: #1a1a1d;
+  margin-right: 5px;
+}
+
+.logout-btn {
+  background-color: #c3073f;
+  color: white;
+  font-size: 1em;
+  padding: 0.7em 2em;
+  margin-top: 2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%; /* Оставляем кнопку по ширине контейнера */
+  box-sizing: border-box;
+}
+
+.logout-btn:hover {
+  background-color: #a3063e;
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    padding: 1em;
+    max-width: 90%; /* Увеличиваем ширину на мобильных устройствах */
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .search-section form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-section input[type="text"] {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-section button[type="submit"] {
+    width: 100%;
+  }
+}
+.court-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 100%;
+}
+
+.court-list li {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--border-hover-color);
+  margin: 0.5em 0;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.court-list li:hover {
+  background-color: #e2e2e2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+#map,
+#map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+footer {
+  background: var(--background-color-header-footer);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1em;
+  height: 50px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--modal-background-color);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 450px;
+}
+
+.close-modal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Медиа-запросы для разных размеров экранов */
+@media (max-width: 600px) {
+  header, footer {
+    padding: 0.5em;
+    height: auto; /* Это позволяет адаптировать высоту к содержимому */
+  }
+  header {
+    height: 40px; /* Дополнительно уменьшаем на мобильных */
+  }
+  
+  footer {
+    height: 30px; /* Дополнительно уменьшаем на мобильных */
+  }
+  header h1 {
+    font-size: 1em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  nav a {
+    padding: 0.2em;
+    font-size: 0.8em;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .search-section {
+    width: 100%;
+    height: auto;
+    order: 2;
+    padding: 0.5em;
+  }
+
+  .court-list li {
+    padding: 0.3em;
+    font-size: 0.9em;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    width: 90%;
+  }
+
+  .close-modal {
+    font-size: 24px;
+  }
+
+  .map-section {
+    width: 100%;
+    order: 1;
+    height: 300px; /* Фиксированная высота для карты на мобильных устройствах */
+    overflow: hidden; /* Блокируем прокрутку внутри карты */
+  }
+
+  #map {
+    touch-action: none; /* Предотвращаем зум и панорамирование карты при скролле страницы */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-section,
+  .map-section {
+    width: 100%;
+  }
+
+  .search-section form {
+    flex-direction: column;
+  }
+
+  .search-section button {
+    width: 100%;
+  }
+}
+
+/* Для лучшей адаптивности карты на различных устройствах */
+#map {
+  height: calc(100vh - 120px);
+}
+
+@media (max-width: 600px) {
+  /* Уменьшаем высоту карты для мобильных устройств */
+  #map {
+    height: 300px;
+  }
+}
+/* ... (все предыдущие стили) ... */
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 3px;
+  z-index: 1000;
+  transform-origin: 4px 0px;
+  transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+              background 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+              opacity 0.6s ease;
+}
+
+.nav-toggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.nav-toggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* Активированное состояние гамбургер-иконки */
+.nav-toggle.active span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #c3073f;
+}
+
+.nav-toggle.active span:nth-last-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.nav-toggle.active span:nth-last-child(1) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* Стиль для скрытой навигации */
+#nav {
+  width: 100%;
+  display: none;
+}
+
+/* Стиль, чтобы показать навигацию, когда .nav-toggle активен */
+#nav.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+  /* ... (все предыдущие медиа-запросы) ... */
+
+  /* Включаем отображение кнопки гамбургер при ширине экрана 600px или меньше */
+  .nav-toggle {
+    display: none; /* Скрыт по умолчанию, будет показан только на мобильных */
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 2; /* Выше, чем любой другой элемент в header */
+}
+
+  header h1 {
+    font-size: 1.6em; /* Уменьшите если необходимо */
+  }
+
+  /* При активном меню, навигационные ссылки должны отображаться вертикально */
+  #nav.active {
+    display: block;
+  }
+
+  nav a {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  /* Отображаем гамбургер-меню и скрываем пункты навигации */
+  .nav-toggle {
+    display: block;
+  }
+  
+  /* Скрытая навигация по умолчанию */
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50px; /* Высота вашего header */
+    left: 0;
+    background-color: #1a1a1d; /* Цвет вашего header */
+    border-top: 3px solid #c3073f; /* Акцентная линия сверху */
+    z-index: 1; /* Чтобы меню было поверх всего содержимого */
+  }
+
+  /* При активации этот стиль отображает навигацию */
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    display: block; /* Добавим block, чтобы ссылки заняли всю ширину */
+  }
+}
+@media (min-width: 601px) {
+  nav {
+    display: flex !important;
+  }
+}
